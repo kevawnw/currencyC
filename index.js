@@ -5,6 +5,9 @@ fetch("http://apilayer.net/api/live?access_key=e12a8ff2cb281a22f95288d44f4476f4&
     console.log(data.quotes)
     const dropdown = document.querySelector("select#currency-types")
     const input = document.querySelector('input#usd-placeholder')
+    const divreturn = document.querySelector('div#return-amount')
+    const divcurrency = document.querySelector('div#currency-name')
+    const imgContainer = document.querySelector('img#return-img')
     input.type = "number"
     input.step = "any"
     const form = document.querySelector('form')
@@ -31,6 +34,10 @@ fetch("http://apilayer.net/api/live?access_key=e12a8ff2cb281a22f95288d44f4476f4&
         console.log(img)
         console.log(returnCurrency)
         console.log(countryName)
+        imgContainer.src = img
+        divreturn.textContent = returnCurrency
+        divcurrency.textContent = countryName
+
     })
     
     
