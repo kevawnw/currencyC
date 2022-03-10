@@ -1,4 +1,4 @@
-fetch("http://apilayer.net/api/live?access_key=e12a8ff2cb281a22f95288d44f4476f4&currencies=EUR,GBP,CAD,AUD,MXN&source=USD&format=1")
+fetch("http://apilayer.net/api/live?access_key=e12a8ff2cb281a22f95288d44f4476f4&currencies=EUR,GBP,CAD,AUD,MXN,JMD,JPY,CNY,NZD&source=USD&format=1")
 .then(res => res.json())
 .then(data => {
     console.log(data)
@@ -17,6 +17,10 @@ fetch("http://apilayer.net/api/live?access_key=e12a8ff2cb281a22f95288d44f4476f4&
     rateX[2][2] = "https://flagicons.lipis.dev/flags/4x3/ca.svg"
     rateX[3][2] = "https://flagicons.lipis.dev/flags/4x3/au.svg"
     rateX[4][2] = "https://flagicons.lipis.dev/flags/4x3/mx.svg"
+    rateX[5][2] = "https://flagicons.lipis.dev/flags/4x3/jm.svg"
+    rateX[6][2] = "https://flagicons.lipis.dev/flags/4x3/jp.svg"
+    rateX[7][2] = "https://flagicons.lipis.dev/flags/4x3/cn.svg"
+    rateX[8][2] = "https://flagicons.lipis.dev/flags/4x3/nz.svg"
     console.log(rateX)
 
     rateX.forEach(data => {
@@ -27,6 +31,9 @@ fetch("http://apilayer.net/api/live?access_key=e12a8ff2cb281a22f95288d44f4476f4&
     })
     form.addEventListener('submit', (e) => {
         e.preventDefault()
+        if(input.value.length === 0){
+            return false
+        }
         const countryName = JSON.parse(dropdown.value).country
         const returnValue = JSON.parse(dropdown.value).rValue
         const img = JSON.parse(dropdown.value).img
@@ -35,7 +42,7 @@ fetch("http://apilayer.net/api/live?access_key=e12a8ff2cb281a22f95288d44f4476f4&
         console.log(returnCurrency)
         console.log(countryName)
         imgContainer.src = img
-        divreturn.textContent = Math.round(100*returnCurrency)/100
+        divreturn.textContent =` $ ${Math.round(100*returnCurrency)/100}`
         divcurrency.textContent = countryName
 
     })
