@@ -4,30 +4,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currancy Converter 3000</title>
-    <script defer src="index.js"></script>
+    <script defer src="src/index.js"></script>
     <link rel="stylesheet" href="./tailwind/output.css">
   </head>
-  <div> 
-      <h1><img src="https://pixy.org/src/9/95282.png" alt="Money-logo" width="100" height="100">Xchange Me</h1>
-      <hr>
+
+<body class="bg-gray-100">
+
+  <div class="min-h-screen bg-gradient-to-r from-green-400 to-blue-500 flex flex-col justify-center py-12 px-6 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+
+    <div class="p-6 max-w-sm mx-auto space-x-4"> 
+       <img src="images/currency_exchange_black_48dp.svg" alt="Money-logo" width="100" height="100" class="hover:animate-spin animate-bounce mx-auto h-12 w-auto invert">
+        <br>
+        <h2 class="mt-6 text-center text-3xl font-extrabold text-white">iExchange</h2>
+    </div>
+      <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+          <div class="bg-white py-8 px-6 shadow rounded-lg sm:px-10">
+              <h1 class="mb-5 text-left text-2xl font-bold text-blue-500">USD Converter</h1>
+              <form>
+                <label class="block text-sm font-medium text-gray-700" for="fname">Enter amount you'd like to convert below.</label>
+                
+                <br>
+                
+                <input class="border rounded-3xl border-slate-600 placeholder:italic placeholder:text-slate-400 placeholder:text-sm" type id="usd-placeholder" name="USD " placeholder="   USD $:"> 
+                
+                <form>    
+                  <select class="border rounded-3xl border-slate-600" id="currency-types" name="currency-types">  
+                  </select>
+                  
+                    <input class="mt-8 w-full flex justify-center py-2 px-4 border border-transparent rounded-3xl shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="submit" id="submit" value="Submit">
+                </form>
+          </div>
+
+               <br> 
+               
+          <div class="bg-white py-8 px-6 shadow rounded-lg sm:px-10" id="return-container">
+
+              <h1 class="mb-5 text-left text-2xl font-bold text-blue-500" id="return-currency">Converted Currency:</h1>
+              <br>
+              
+              <div class="max-h-20 border-solid rounded-lg border-2 border-indigo-600 shadow-md overflow-hidden">
+                <div class="place-items-center flex flex-row gap-6">
+                    <img class="h-20 w-auto rounded-l-md " id="return-img">
+                    <div class="block text-lg font-normal text-right text-gray-700" id="return-amount"></div>
+                    <div class="block text-sm text-right font-extrabold text-gray-700" id="currency-name"></div>
+                </div>
+                
+              </div>
+          </div>
+      </div>
+
+    </div>
   </div>
-<body>
- <div>
-     <h1>USD Converter</h3>
-     <form >
-      <label for="fname">Currency:</label><br>
-      <input type id="usd-placeholder" name="USD " placeholder="USD $:"> <form>
-          <select id="currency-types" name="currency-types">
-            
-          </select>  <input type="submit" id="submit" value="Submit">
-      </form>
- </div>
- <br>  
- <h1 id="return-currency">Return Currency</h1>
- <div id="return-container">
-   <img id="return-img">
-   <div id="return-amount"> </div>
-   <div id="currency-name"></div>
- </div>
 </body>
 </html> 
