@@ -35,7 +35,7 @@ fetch("http://apilayer.net/api/live?access_key=e12a8ff2cb281a22f95288d44f4476f4&
         console.log(returnCurrency)
         console.log(countryName)
         imgContainer.src = img
-        divreturn.textContent = returnCurrency
+        divreturn.textContent = Math.round(100*returnCurrency)/100
         divcurrency.textContent = countryName
 
     })
